@@ -1,5 +1,9 @@
 library(shiny)
 
+URL <- "https://raw.githubusercontent.com/msuassuna/StormFloodShinyApp/master/Data/TabRes.csv"
+FloodFeatures <- read.csv(URL, row.names = NULL)
+FloodFeatures$Date <- as.Date(FloodFeatures$Date, "%Y-%m-%d")
+
 shinyUI(
       fluidPage(
 
